@@ -15,7 +15,7 @@ activity_labels <-
           col_types = cols(X1 = col_integer(), X2 = col_character())
     )
 
-# clean variable names and merge test and train sets
+# prepare variable and activity names
 
 features <- 
     features$X1 %>% 
@@ -26,25 +26,26 @@ activity_labels <-
     rename(activity_id = X1, activity = X2) %>%
     mutate(activity = tolower(activity))
 
-names(train_set) <- features
+full_labels <- train_labels %>% bind_rows(test_labels)
 
-train_set <- train_set %>% bind_cols(train_labels)
-
-
-test_set <- test_set %>% bind_cols(test_labels)
+# create merged data frame
 
 full_set <-
-    test_set %>%
-    bind_rows(train_set) %>%
-    rename_all(~features)
+  train_set %>%
+  magrittr::set_colnames(features) %>%    # set new variables name
+  bind_rows(test_set) %>%   # merge train and test sets
+  select(matches("[Mm]ean|[Ss]td")) %>%   # select mean and std columns
+  bind_cols(full_labels) %>%    # merge labels column
+  rename(activity_id = X1) %>%    # rename new column
+  left_join(
+      activity_labels, 
+      by = c("activity_id" = "activity_id")
+    ) %>%
+  select(-activity_id) %>%
+  select(activity, everything())
 
 
-full_set <- rbind(test_set, train_set)
-names(full_set) <- features
 
-full_set <- 
-    full_set %>% 
-    select(matches("[Mm]ean|[Ss]td"))
 
 rm("features", "test_set", "train_set")
 
