@@ -5,8 +5,8 @@ This README is part of the final assignment of the "Getting and Cleaning Data" c
 The goal of the project is 1) to write a script that clean and merge different data sets and which 2) create a new tidy data set after computing some transformations, and 3) write a Code Book that describes the variables, the data and any transformations performed.
 
 Most of the work in the script is done with packages from the core "tidyverse", in particular:
-- Readr: compared to base read.tbale, it doesn't need the "StringsAsFactors = FALSE" and it's easier to create column names (col_names) and specific column parsing (col_type)
-- Dplyr: it a grammar of data manipulation, that that through specific verbs perform all the most important data manipulation
+- Readr: compared to base read.table, it doesn't need the "StringsAsFactors = FALSE" and it's easier to create column names (col_names) and specific column parsing (col_type)
+- Dplyr: it's a grammar of data manipulation, which through specific verbs performs all the main data manipulations with an easy-to-read code
 - Stringr
 - Tibble
 - Tidyr
