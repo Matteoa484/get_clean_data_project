@@ -2,35 +2,44 @@ library(tidyverse)
 
 # 1. upload raw data
 
-# variable labels
-features <- 
-    read_table("./UCI HAR Dataset/features.txt", col_names = c("features_list")) %>%
-    pull(features_list)     
+# column labels
+features <-
+    read_table(
+        "./UCI HAR Dataset/features.txt",
+        col_names = c("features_list")
+    ) %>%
+    pull(features_list)
 
 # activity labels
 activity_labels <- 
-  read_table(
-    "./UCI HAR Dataset/activity_labels.txt", 
-    col_names = c("activity_id", "activity"), 
-    col_types = cols(activity_id = col_integer(), activity = col_character())
-  ) %>%
-  mutate(activity = tolower(activity))
+    read_table(
+        "./UCI HAR Dataset/activity_labels.txt", 
+        col_names = c("activity_id", "activity"), 
+        col_types = cols(activity_id = col_integer(), activity = col_character())
+    ) %>%
+    mutate(activity = tolower(activity))
 
 # set data
 train_set <- read_table("./UCI HAR Dataset/train/X_train.txt",  col_names = FALSE)
 test_set <- read_table("./UCI HAR Dataset/test/X_test.txt", col_names = FALSE)
-full_set <- train_set %>% bind_rows(test_set)
+full_set <- train_set %>% bind_rows(test_set) # merge train / test sets
 rm("train_set", "test_set")
 
 # labels data
-train_labels <- read_table("./UCI HAR Dataset/train/y_train.txt", 
-                           col_names = c("activity_id"), 
-                           col_types = "i"
-                )
-test_labels <- read_table("./UCI HAR Dataset/test/y_test.txt", 
-                          col_names = c("activity_id"), 
-                          col_types = "i"
-                )
+train_labels <- 
+    read_table(
+        "./UCI HAR Dataset/train/y_train.txt", 
+        col_names = c("activity_id"), 
+        col_types = "i"
+    )
+
+test_labels <- 
+    read_table(
+        "./UCI HAR Dataset/test/y_test.txt", 
+        col_names = c("activity_id"), 
+        col_types = "i"
+    )
+
 full_labels <- train_labels %>% bind_rows(test_labels)
 rm("train_labels", "test_labels")
 
