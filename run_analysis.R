@@ -65,7 +65,7 @@ full_set <-
   full_set %>%
   magrittr::set_colnames(features) %>%    # set new variables name
   select(matches("[Mm]ean|[Ss]td")) %>%   # select mean and std columns
-  bind_cols(full_labels, full_subject) %>%    # merge labels column
+  bind_cols(full_labels, full_subject) %>%    # merge labels/subjects columns
   left_join(
       activity_labels, 
       by = c("activity_id" = "activity_id")
