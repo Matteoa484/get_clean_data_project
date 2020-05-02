@@ -23,7 +23,6 @@ activity_labels <-
 train_set <- read_table("./UCI HAR Dataset/train/X_train.txt",  col_names = FALSE)
 test_set <- read_table("./UCI HAR Dataset/test/X_test.txt", col_names = FALSE)
 full_set <- train_set %>% bind_rows(test_set) # merge train / test sets
-rm("train_set", "test_set")
 
 # labels data
 train_labels <- 
@@ -40,18 +39,24 @@ test_labels <-
         col_types = "i"
     )
 
-full_labels <- train_labels %>% bind_rows(test_labels)
-rm("train_labels", "test_labels")
+full_labels <- train_labels %>% bind_rows(test_labels) # merge labels sets
 
-# subject data
-train_subject <- read_table("./UCI HAR Dataset/train/subject_train.txt", 
-                            col_names = c("subject"), 
-                            col_types = "i")
-test_subject <- read_table("./UCI HAR Dataset/test/subject_test.txt", 
-                          col_names = c("subject"), 
-                          col_types = "i")
-full_subject <- train_subject %>% bind_rows(test_subject)
-rm("train_subject", "test_subject")
+# subjects data
+train_subject <- 
+    read_table(
+        "./UCI HAR Dataset/train/subject_train.txt", 
+        col_names = c("subject"), 
+        col_types = "i"
+    )
+
+test_subject <- 
+    read_table(
+        "./UCI HAR Dataset/test/subject_test.txt", 
+        col_names = c("subject"), 
+        col_types = "i"
+    )
+
+full_subject <- train_subject %>% bind_rows(test_subject) # merge subjects sets
 
 
 # 2. create merged data frame and extract mean/std 
