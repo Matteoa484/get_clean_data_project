@@ -8,7 +8,7 @@ features <-
     read_table(
         "./UCI HAR Dataset/features.txt",
         col_names = c("features_list")
-    ) %>%
+    ) #☺%>%
     pull(features_list)
 
 # activity labels
@@ -82,6 +82,15 @@ new_set <-
     group_by(subject, activity) %>% 
     summarise_all(mean, na.rm = TRUE)
 
+write_delim(new_set, path = "tidy_data_set.txt", delim = " ", col_names = TRUE)
+
+features <-
+    features %>%
+    mutate(
+        case_when(
+            str_detect(features_list, "Body") & str_detect(features_list, "mean") & str_detect(features_list, "X$") == "bodymeanx"
+        )
+    )
 
 
 # activity labels come factors, con ordine da file txt
