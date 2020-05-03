@@ -11,3 +11,8 @@ Most of the work in the script is done with packages from the core "tidyverse", 
 - Tibble: a data.frame which prints better on the console
 - Tidyr
 - Magrittr: pipe (%>%) operator
+
+The scrip is divided in three sections:
+1. Upload raw data from the folder UCI HAR
+2. Create a "full" data set merging the different parts and filtering for the columns on the mean and standard deviation
+3. Create a new tidy data set with the average of each variable for each activity and each subject
