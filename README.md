@@ -10,12 +10,12 @@ The Githu repo contains:
 3. A Code Book with the information on all the variables and summaries calculated
 
 Most of the work in the script is done with packages from the core *"tidyverse"*, in particular:
-- **Readr**: compared to base read.table, it doesn't need the "StringsAsFactors = FALSE" and it's easier to create column names (col_names) and specific column parsing (col_type)
+- **Readr**: compared to base read.table, it doesn't need the `StringsAsFactors = FALSE` and it's easier to create column names (`col_names`) and specific column parsing (`col_type`)
 - **Dplyr**: it's a grammar of data manipulation, which through specific verbs performs all the main data manipulations with an easy-to-read code
 - **Stringr**:
 - **Tibble**: a data.frame which prints better on the console
 - **Tidyr**:
-- **Magrittr**: pipe (%>%) operator
+- **Magrittr**: pipe (`%>%`) operator
 
 ### run_analysis
 The scrip is divided in three sections:
