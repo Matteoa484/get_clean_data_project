@@ -28,3 +28,5 @@ The scrip is divided in three sections:
     Through different steps the code adds the column names (`magrittr::set_colnames()`), keeps only the columns with *mean* or *std* in the name (`select(match())`), adds the labels/subjects columns (`bind_cols()`), adds for each line its *activity label* based on the *activity id* (`left_join)`) and drops and reorders columns to create a more redable final set.
 
 3. Create a new tidy data set with the average of each variable for each activity and each subject
+
+    The script first groups the full set by *subject* and *activity* (`group_by()`) and then computes columns' mean for each sub-set (`summarise_all()`). The output is a tidy data set with one variable for each column and one observation for each row.
