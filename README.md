@@ -21,10 +21,10 @@ Most of the work in the script is done with packages from the core *"tidyverse"*
 The scrip is divided in three sections:
 1. Upload raw data from the folder Human Activity Recognition Using Smartphones Dataset ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
     
-    In order to keep a coerent working flow, the script uploads for each data set the *train* and the *test* blocks and it merges them  with Dplyr's `bind_rows`.
+    In order to keep a coerent working flow, the script uploads for each data set the *train* and the *test* blocks and merges them  with Dplyr's `bind_rows`. All the data is uploaded via Readr `read_table()`.
     
-2. Create a "full" data set merging the different parts and filtering for the columns on the mean and standard deviation
+2. Create a "full" data set
 
-    Through different steps the code adds the column names (`magrittr::set_colnames()`), keeps only the column with *mean* or *std* in the name (`select(match())`), add the labels/subjects columns (`bind_cols()`), add for each line its *activity label* based on the *activity id* (`left_join)`) and drop and reorder columns to create a more redable final set.
+    Through different steps the code adds the column names (`magrittr::set_colnames()`), keeps only the columns with *mean* or *std* in the name (`select(match())`), adds the labels/subjects columns (`bind_cols()`), adds for each line its *activity label* based on the *activity id* (`left_join)`) and drops and reorders columns to create a more redable final set.
 
 3. Create a new tidy data set with the average of each variable for each activity and each subject
