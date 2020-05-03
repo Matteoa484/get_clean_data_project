@@ -19,9 +19,9 @@ Most of the work in the script is done with packages from the core *"tidyverse"*
 
 ### run_analysis
 The scrip is divided in three sections:
-1. Upload raw data from the folder UCI HAR ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
+1. Upload raw data from the folder Human Activity Recognition Using Smartphones Dataset ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
     
-    test
+    In order to keep a coerent working flow, the script uploads for each data set the *train* and the *test* blocks and it merges them  with Dplyr's `bind_rows`.
     
 2. Create a "full" data set merging the different parts and filtering for the columns on the mean and standard deviation
 3. Create a new tidy data set with the average of each variable for each activity and each subject
