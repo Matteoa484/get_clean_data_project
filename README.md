@@ -20,6 +20,7 @@ Most of the work in the script is done with packages from the core *"tidyverse"*
 ### run_analysis
 The scrip is divided in three sections:
 1. Upload raw data from the folder UCI HAR ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
+    
     test
     
 2. Create a "full" data set merging the different parts and filtering for the columns on the mean and standard deviation
