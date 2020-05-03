@@ -1,6 +1,7 @@
 library(tidyverse)
 
-# 1. upload raw data
+# upload raw data ---------------------------------------------------------
+
 
 # column labels
 features <-
@@ -58,8 +59,8 @@ test_subject <-
 
 full_subject <- train_subject %>% bind_rows(test_subject) # merge subjects sets
 
+# create merged set and extract mean/std ----------------------------------
 
-# 2. create merged data frame and extract mean/std 
 
 full_set <-
   full_set %>%
@@ -72,6 +73,9 @@ full_set <-
   ) %>%
   select(-activity_id) %>%
   select(subject, activity, everything())
+
+# create a new tidy data set ----------------------------------------------
+
 
 new_set <- 
     full_set %>% 
