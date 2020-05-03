@@ -11,14 +11,13 @@ features <-
     ) %>%
     pull(features) %>%
     str_to_lower() %>%
-    str_replace("[1-9] |[1-9][0-9] |[1-9][0-9][0-9] ", "") %>%
-    str_replace("t", "time_") %>%
-    str_replace("f", "fourier_") %>%
-    str_replace("body", "body_") %>%
-    str_replace("gravity", "gravity_")
-
-
-
+    str_replace_all(features, c(
+        "[1-9] |[1-9][0-9] |[1-9][0-9][0-9] " = "",
+        "^t" = "time_",
+        "body" = "body_",
+        "gravity" = "gravity_")
+    )
+    
 
 # Body+mean+X
 # str_subset(features, ".Body[a-zA-Z]{3}[:punct:]mean[:punct:]{3}X$")
