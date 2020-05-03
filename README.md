@@ -6,7 +6,7 @@ The goal of the project is 1) to write a script that clean and merge different d
 
 The Githu repo contains:
 1. This README file
-2. A script, run_analysis.R, the does all the tasks required
+2. A script, `run_analysis.R`, the does all the tasks required
 3. A Code Book with the information on all the variables and summaries calculated
 
 Most of the work in the script is done with packages from the core *"tidyverse"*, in particular:
