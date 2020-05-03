@@ -7,9 +7,21 @@ library(tidyverse)
 features <-
     read_table(
         "./UCI HAR Dataset/features.txt",
-        col_names = c("features_list")
-    ) #☺%>%
-    pull(features_list)
+        col_names = c("features")
+    ) %>%
+    pull(features) %>%
+    str_to_lower() %>%
+    str_replace("[1-9] |[1-9][0-9] |[1-9][0-9][0-9] ", "") %>%
+    str_replace("t", "time_") %>%
+    str_replace("f", "fourier_") %>%
+    str_replace("body", "body_") %>%
+    str_replace("gravity", "gravity_")
+
+
+
+
+# Body+mean+X
+# str_subset(features, ".Body[a-zA-Z]{3}[:punct:]mean[:punct:]{3}X$")
 
 # activity labels
 activity_labels <- 
@@ -83,14 +95,5 @@ new_set <-
     summarise_all(mean, na.rm = TRUE)
 
 write_delim(new_set, path = "tidy_data_set.txt", delim = " ", col_names = TRUE)
-
-features <-
-    features %>%
-    mutate(
-        case_when(
-            str_detect(features_list, "Body") & str_detect(features_list, "mean") & str_detect(features_list, "X$") == "bodymeanx"
-        )
-    )
-
 
 # activity labels come factors, con ordine da file txt
