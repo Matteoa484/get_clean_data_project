@@ -62,28 +62,33 @@ full_set <-
   )
 
 
-#%>%
-    pull(features) %>%
-    str_to_lower() %>%
-    str_replace_all(features, c(
-        "[1-9] |[1-9][0-9] |[1-9][0-9][0-9] " = "",
-        "^t" = "time_",
-        "body" = "body_",
-        "gravity" = "gravity_")
+# select mean and std cols ------------------------------------------------
+
+full_set <-
+  full_set %>%
+  select(subject, activity, matches("[Mm]ean"), matches("[Ss]td"))
+
+
+# rename variables --------------------------------------------------------
+
+col_name <-
+  names(full_set) %>%
+  str_to_lower() %>%
+  str_replace_all(
+    c(
+      "\\-" = "\\_",
+      "\\(\\)" = "",
+      "(?<=[a-zA-Z])\\(" = "_",
+      "\\," = "\\_",
+      "\\)$" = "",
+      "[0-9]{1,3} " = "",
+      "(?<=body)body" = "",
+      "(?<=[a-z])ya(?=[a-z])" = "y_a",
+      "^t" = "time_",
+      "^f" = "fourier_"
     )
     
-
-# Body+mean+X
-# str_subset(features, ".Body[a-zA-Z]{3}[:punct:]mean[:punct:]{3}X$")
-
-# activity labels
-
-
-
-
-
-
-
+  )
 
 
 # create merged set and extract mean/std ----------------------------------
