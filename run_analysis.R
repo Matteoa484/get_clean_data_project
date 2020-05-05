@@ -81,42 +81,34 @@ col_name <-
       "(?<=[a-zA-Z])\\(" = "_",
       "\\," = "\\_",
       "\\)$" = "",
+      "\\)(?=[:punct:])" = "",
       "[0-9]{1,3} " = "",
       "(?<=body)body" = "",
-      "(?<=[a-z])ya(?=[a-z])" = "y_a",
-      "(?<=[a-z])yg(?=[a-z])" = "y_g",
-      "(?<=[a-z])cj(?=[a-z])" = "c_j",
-      "(?<=[a-z])oj(?=[a-z])" = "o_j",
+      "acc(?=[a-z])" = "acc_",
+      "gyro(?=[a-z])" = "gyro_",
       "^t" = "time_",
-      "^f" = "fourier_"
+      "^f" = "fourier_",
+      "body(?=[a-z])" = "body_",
+      "gravity(?=[a-z])" = "gravity_",
+      "mean(?=[a-z])" = "mean_",
+      "jerk(?=[a-z])" = "jerk_"
     )
-    
   )
+    
+ full_set <-
+   full_set %>%
+   magrittr::set_colnames(col_name)
 
-
-# create merged set and extract mean/std ----------------------------------
-
-
-full_set <-
-  full_set %>%
-  magrittr::set_colnames(features) %>%    # set new variables name
-  select(matches("[Mm]ean|[Ss]td")) %>%   # select mean and std columns
-  bind_cols(full_labels, full_subject) %>%    # merge labels/subjects columns
-  left_join(
-      activity_labels, 
-      by = c("activity_id" = "activity_id")
-  ) %>%
-  select(-activity_id) %>%
-  select(subject, activity, everything())
 
 # create a new tidy data set ----------------------------------------------
 
+# the txt file can be read with base R read.table
+# or with Readr write_tsv
+ 
 
-new_set <- 
-    full_set %>% 
-    group_by(subject, activity) %>% 
-    summarise_all(mean, na.rm = TRUE)
-
-write_delim(new_set, path = "tidy_data_set.txt", delim = " ", col_names = TRUE)
-
-# activity labels come factors, con ordine da file txt
+new_set <-
+   full_set %>% 
+   group_by(subject, activity) %>% 
+   summarise_all(mean, na.rm = TRUE) %>%
+   as.data.frame(new_set) %>%
+   write.table("tidy_data_set.txt", sep = "\t", col.names = TRUE)
