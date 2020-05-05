@@ -14,14 +14,14 @@ Most of the work in the script is done with packages from the core *"tidyverse"*
 - **Dplyr**: it's a grammar of data manipulation, which through specific verbs performs all the main data manipulations with an easy-to-read code
 - **Stringr**:
 - **Tibble**: a data.frame which prints better on the console
-- **Tidyr**:
 - **Magrittr**: pipe (`%>%`) operator
 
 ### run_analysis
 The scrip is divided in three sections:
 1. Upload raw data from the folder Human Activity Recognition Using Smartphones Dataset ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
     
-    In order to keep a coerent working flow, the script uploads for each data set the *train* and the *test* blocks and merges them  with Dplyr's `bind_rows`. All the data is uploaded via Readr `read_table()`.
+    All the data is uploaded via Readr `read_table()` declaring the columns name and the column parse if necessary. For example:
+    `feat_list <- read_table("./UCI HAR Dataset/features.txt", col_names = c("features"), col_types = "c")`
     
 2. Create a "full" data set
 
