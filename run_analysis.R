@@ -85,6 +85,8 @@ col_name <-
       "(?<=body)body" = "",
       "(?<=[a-z])ya(?=[a-z])" = "y_a",
       "(?<=[a-z])yg(?=[a-z])" = "y_g",
+      "(?<=[a-z])cj(?=[a-z])" = "c_j",
+      "(?<=[a-z])oj(?=[a-z])" = "o_j",
       "^t" = "time_",
       "^f" = "fourier_"
     )
