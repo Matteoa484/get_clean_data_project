@@ -21,6 +21,7 @@ The scrip is divided in three sections:
 1. Upload raw data from the folder Human Activity Recognition Using Smartphones Dataset ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
     
     All the data is uploaded via Readr `read_table()` declaring the columns name and the column parse if necessary. For example:
+    
     `feat_list <- read_table("./UCI HAR Dataset/features.txt", col_names = c("features"), col_types = "c")`
     
 2. Create a "full" data set
