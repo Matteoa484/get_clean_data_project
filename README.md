@@ -4,7 +4,7 @@
 This README is part of the final assignment of the "Getting and Cleaning Data" course by Johns Hopkins University on Coursera ([link](https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project)).
 The goal of the project is 1) to write a script that clean and merge different data sets and which 2) creates a new tidy data set after computing some transformations, and 3) write a Code Book that describes the variables, the data and any transformation performed.
 
-The Githu repo contains:
+The Github repo contains:
 1. This README file
 2. A script, `run_analysis.R`, the does all the tasks required
 3. A Code Book with the information on all the variables and summaries calculated
