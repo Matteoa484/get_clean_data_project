@@ -20,7 +20,7 @@ Most of the work in the script is done with packages from the core *"tidyverse"*
 The scrip is divided in three sections:
 1. Upload raw data from the folder Human Activity Recognition Using Smartphones Dataset ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
     
-    All the data is uploaded via Readr `read_table()` declaring the columns name and the column parse if necessary. For example:
+    All the data is uploaded via `readr::read_table()` declaring the columns name and the column parse if necessary. For example:
     
     `feat_list <- read_table("./UCI HAR Dataset/features.txt", col_names = c("features"), col_types = "c")`
     
@@ -30,13 +30,19 @@ The scrip is divided in three sections:
     
     `data_train <- data_train %>% bind_rows(data_test)`
     
-    Then it merges all the columns together with Dplyr's `bind_cols()` and links the activity label to its activity id with:
+    Then it merges all the columns together with `dplyr::bind_cols()` and links the activity label to its activity id with:
     
     `left_join(
     activity_labels, 
     by = c("activity_id" = "activity_id")
   )`
-  
-3. Create a new tidy data set with the average of each variable for each activity and each subject
+
+3. Select mean and std columns
+
+   The script uses `dplyr::select()` to re-order the columns (subject and activity first) and to keep only the variables with **mean** or **std** in the name:
+`select(subject, activity, matches("[Mm]ean"), matches("[Ss]td")`
+ 
+
+5. Create a new tidy data set with the average of each variable for each activity and each subject
 
     The script first groups the full set by *subject* and *activity* (`group_by()`) and then computes columns' mean for each sub-set (`summarise_all()`). The output is a tidy data set with one variable for each column and one observation for each row.
