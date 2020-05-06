@@ -45,7 +45,7 @@ The scrip is divided in five sections:
 
 4. Rename variables
 
-    The script first lowercase all the variable names with `readr::str_to_lower()`, then performs multiple transformations (more info in the Code Book) with `readr::str_replace_all()` to make them more readable and finally sets the new col names with `magrittr::set_colnames()`
+    The script first lowercase all the variable names with `readr::str_to_lower()`, then performs multiple transformations (more info in the Code Book) with `readr::str_replace_all()` to make the names more readable and finally sets the new col names with `magrittr::set_colnames()`
 
 5. Create a new tidy data set with the average of each variable for each activity and each subject
 
