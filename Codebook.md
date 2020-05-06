@@ -20,8 +20,6 @@ The experiments have been carried out with a group of 30 volunteers. Each person
 
 The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
-For further details about this dataset check the README.txt (link).
-
 For each record it is provided:
 - Triaxial acceleration from the accelerometer and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope. 
@@ -29,15 +27,18 @@ For each record it is provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
+For further details about this dataset check the README.txt (link)[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip].
+
+
 The dataset includes the following files:
-1 *README.txt*
-2 *features_info.txt*: Shows information about the variables used on the feature vector.
-3 *features.txt*: List of all features.
-4 *activity_labels.txt*: Links the class labels with their activity name.
-5 *train/X_train.txt*: Training set.
-6 *train/y_train.txt*: Training labels.
-7 *test/X_test.txt*: Test set.
-8 *test/y_test.txt*: Test labels.
+1. *README.txt*
+2. *features_info.txt*: Shows information about the variables used on the feature vector.
+3. *features.txt*: List of all features.
+4. *activity_labels.txt*: Links the class labels with their activity name.
+5. *train/X_train.txt*: Training set.
+6. *train/y_train.txt*: Training labels.
+7. *test/X_test.txt*: Test set.
+8. *test/y_test.txt*: Test labels.
 
 The following files are available for the train and test data. Their descriptions are equivalent. 
 - train/subject_train.txt: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
