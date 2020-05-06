@@ -78,3 +78,4 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 - tBodyGyroJerkMean
 
 The complete features list is saved in the *featutes.txt* file, uploaded in R as a character vector of **length 561**.
+The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total). The train dataset is a **data frame of 561 columns and 7352 rows**. The test dataset is a **data frame of 561 columns and 2947 rows**.
