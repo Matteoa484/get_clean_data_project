@@ -31,7 +31,7 @@ For further details about this dataset check the README.txt ([link](https://d396
 
 ## Dataset files
 
-The dataset folder includes the following files:
+The files included in the dataset folder and used for the Coursera project are:
 1. *README.txt*
 2. *features_info.txt*: Shows information about the variables used on the feature vector.
 3. *features.txt*: List of all features.
@@ -40,12 +40,6 @@ The dataset folder includes the following files:
 6. *train/y_train.txt*: Training labels.
 7. *test/X_test.txt*: Test set.
 8. *test/y_test.txt*: Test labels.
-
-The following files are available for the train and test data. Their descriptions are equivalent. 
-- train/subject_train.txt: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-- train/Inertial Signals/total_acc_x_train.txt: The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the total_acc_x_train.txt and total_acc_z_train.txt files for the Y and Z axis. 
-- train/Inertial Signals/body_acc_x_train.txt: The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-- train/Inertial Signals/body_gyro_x_train.txt: The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
 Notes: 
 - Features are normalized and bounded within [-1,1].
