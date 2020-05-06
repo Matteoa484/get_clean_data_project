@@ -76,3 +76,5 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 - tBodyAccJerkMean
 - tBodyGyroMean
 - tBodyGyroJerkMean
+
+The complete features list is saved in the *featutes.txt* file, uploaded in R as a character vector of **length 561**.
