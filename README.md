@@ -49,5 +49,7 @@ The scrip is divided in five sections:
 
 5. Create a new tidy data set with the average of each variable for each activity and each subject
 
-    The script first groups the full set by *subject* and *activity* with `dplyr::group_by()`, then computes columns' mean for each sub-group with `dplyr::summarise_all()` and then save it as a .txt file (*tidy_data_set.txt*). 
+    The script first groups the full set by *subject* and *activity* with `dplyr::group_by()`, then computes columns' mean for each sub-group with `dplyr::summarise_all()` and then save it as a tab-separated .txt file (*tidy_data_set.txt*). 
     The output is a tidy data set with one variable for each column and one observation for each row.
+    
+    *tidy_data_set.txt* can be read back into R both with base R `read.table()` or `readr::read_table()`
