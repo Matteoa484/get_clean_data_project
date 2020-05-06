@@ -103,12 +103,11 @@ col_name <-
 # create a new tidy data set ----------------------------------------------
 
 # the txt file can be read with base R read.table
-# or with Readr write_tsv
- 
+
 
 new_set <-
    full_set %>% 
    group_by(subject, activity) %>% 
    summarise_all(mean, na.rm = TRUE) %>%
    as.data.frame(new_set) %>%
-   write.table("tidy_data_set.txt", sep = "\t", col.names = TRUE)
+   write.table("tidy_data_set.txt")
