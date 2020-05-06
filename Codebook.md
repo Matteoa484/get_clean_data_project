@@ -67,3 +67,30 @@ Those signals were used to estimate the following variables for each pattern:
 - fBodyAccJerkMag
 - fBodyGyroMag
 - fBodyGyroJerkMag
+
+The variables estimated from these signals are: 
+- mean(): mean value
+- std(): standard deviation
+- mad(): median absolute deviation 
+- max(): largest value
+- min(): smallest value
+- sma(): signal magnitude area
+- energy(): energy measure 
+- iqr(): interquartile range 
+- entropy(): signal entropy
+- arCoeff(): autorregresion coefficients with Burg order equal to 4
+- correlation(): correlation coefficient between two signals
+- maxInds(): index of the frequency component with largest magnitude
+- meanFreq(): weighted average of the frequency components to obtain a mean frequency
+- skewness(): skewness of the frequency domain signal 
+- kurtosis(): kurtosis of the frequency domain signal 
+- bandsEnergy(): energy of a frequency interval within the 64 bins of the FFT of each window.
+- angle(): angle between vectors
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
