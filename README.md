@@ -5,19 +5,19 @@ This README is part of the final assignment of the "Getting and Cleaning Data" c
 The goal of the project is 1) to write a script that clean and merge different data sets and which 2) creates a new tidy data set after computing some transformations, and 3) write a Code Book that describes the variables, the data and any transformation performed.
 
 The Github repo contains:
-1. This README file
-2. A script, `run_analysis.R`, the does all the tasks required
-3. A Code Book with the information on all the variables and summaries calculated
+1. This README file.
+2. The script `run_analysis.R`.
+3. A Code Book with the information on all the variables and summaries calculated.
 
 Most of the work in the script is done with packages from the core *"tidyverse"*, in particular:
-- **Readr**: compared to base read.table, it doesn't need the `StringsAsFactors = FALSE` and it's easier to create column names (`col_names`) and specific column parsing (`col_type`)
-- **Dplyr**: it's a grammar of data manipulation, which through specific verbs performs all the main data manipulations with an easy-to-read code
+- **Readr**: compared to base R read.table, it doesn't need the `StringsAsFactors = FALSE` and it's easier to create column names (`col_names`) and specific column parsing (`col_type`).
+- **Dplyr**: it's a grammar of data manipulation, which through specific verbs performs all the main data manipulations with an easy-to-read code.
 - **Stringr**:
-- **Tibble**: a data.frame which prints better on the console
-- **Magrittr**: pipe (`%>%`) operator
+- **Tibble**: a data.frame which prints better on the console.
+- **Magrittr**: pipe (`%>%`) operator.
 
 ### run_analysis
-The scrip is divided in three sections:
+The scrip is divided in five sections:
 1. Upload raw data from the folder Human Activity Recognition Using Smartphones Dataset ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip))
     
     All the data is uploaded via `readr::read_table()` declaring the columns name and the column parse if necessary. For example:
@@ -40,6 +40,7 @@ The scrip is divided in three sections:
 3. Select mean and std columns
 
    The script uses `dplyr::select()` to re-order the columns (subject and activity first) and to keep only the variables with **mean** or **std** in the name:
+   
 `select(subject, activity, matches("[Mm]ean"), matches("[Ss]td")`
 
 4. Rename variables
