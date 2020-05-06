@@ -29,7 +29,7 @@ For each record it is provided:
 
 For further details about this dataset check the README.txt (link)[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip].
 
-## Dataset included files
+## Dataset files
 
 The dataset folder includes the following files:
 1. *README.txt*
