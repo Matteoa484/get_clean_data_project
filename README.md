@@ -41,7 +41,7 @@ The scrip is divided in five sections:
 
    The script uses `dplyr::select()` to re-order the columns (subject and activity first) and to keep only the variables with **mean** or **std** in the name:
    
-`select(subject, activity, matches("[Mm]ean"), matches("[Ss]td")`
+    `select(subject, activity, matches("[Mm]ean"), matches("[Ss]td")`
 
 4. Rename variables
 
