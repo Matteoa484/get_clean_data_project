@@ -24,10 +24,19 @@ The scrip is divided in three sections:
     
     `feat_list <- read_table("./UCI HAR Dataset/features.txt", col_names = c("features"), col_types = "c")`
     
-2. Create a "full" data set
+2. Create a "full" data set merging the raw data uploaded
 
-    Through different steps the code adds the column names (`magrittr::set_colnames()`), keeps only the columns with *mean* or *std* in the name (`select(match())`), adds the labels/subjects columns (`bind_cols()`), adds for each line its *activity label* based on the *activity id* (`left_join)`) and drops and reorders columns to create a more redable final set.
-
+    First, the script combines the *train* and *test* data for each subset (main data, labels and subjects). For example:
+    
+    `data_train <- data_train %>% bind_rows(data_test)`
+    
+    Then it merges all the columns together with Dplyr's `bind_cols()` and links the activity label to its activity id with:
+    
+    `left_join(
+    activity_labels, 
+    by = c("activity_id" = "activity_id")
+  )`
+  
 3. Create a new tidy data set with the average of each variable for each activity and each subject
 
     The script first groups the full set by *subject* and *activity* (`group_by()`) and then computes columns' mean for each sub-set (`summarise_all()`). The output is a tidy data set with one variable for each column and one observation for each row.
