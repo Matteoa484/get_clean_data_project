@@ -31,7 +31,7 @@ For further details about this dataset check the README.txt ([link](https://d396
 
 ## Dataset files
 
-The files included in the dataset folder and used for the Coursera project are:
+The files included in the dataset folder and **used for the Coursera project are**:
 1. *README.txt*
 2. *features_info.txt*: Shows information about the variables used on the feature vector.
 3. *features.txt*: List of all features.
@@ -49,24 +49,7 @@ Notes:
 
 The base raw data is the 3-axial (*XYZ*) raw time signals ("t" prefix) from the accelerometer (*Acc*) and gyroscope (*Gyro*), resulting in the raw signals *tAcc-XYZ* and *tGyro-XYZ*. The acceleration signal was then separated into body (*tBodyAcc-XYZ*) and gravity (*tGravityAcc-XYZ*) acceleration signals. Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (*tBodyAccJerk-XYZ* and *tBodyGyroJerk-XYZ*). The magnitude of these signals were calculated using the Euclidean norm (*tBodyAccMag*, *tGravityAccMag*, *tBodyAccJerkMag*, *tBodyGyroMag*, *tBodyGyroJerkMag*). Finally a Fast Fourier Transform was applied to some of these signals ("f" prefix) producing *fBodyAcc-XYZ*, *fBodyAccJerk-XYZ*, *fBodyGyro-XYZ*, *fBodyAccJerkMag*, *fBodyGyroMag*, *fBodyGyroJerkMag*. 
 
-Those signals were used to estimate the following variables for each pattern:  
-- tBodyAcc-XYZ
-- tGravityAcc-XYZ
-- tBodyAccJerk-XYZ
-- tBodyGyro-XYZ
-- tBodyGyroJerk-XYZ
-- tBodyAccMag
-- tGravityAccMag
-- tBodyAccJerkMag
-- tBodyGyroMag
-- tBodyGyroJerkMag
-- fBodyAcc-XYZ
-- fBodyAccJerk-XYZ
-- fBodyGyro-XYZ
-- fBodyAccMag
-- fBodyAccJerkMag
-- fBodyGyroMag
-- fBodyGyroJerkMag
+Those signals were used to estimate the following features for each pattern: tBodyAcc-XYZ, tGravityAcc-XYZ, tBodyAccJerk-XYZ, tBodyGyro-XYZ, tBodyGyroJerk-XYZ, tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag, fBodyAcc-XYZ, fBodyAccJerk-XYZ,  fBodyGyro-XYZ, fBodyAccMag, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
 
 The variables estimated from these signals are: 
 - mean(): mean value
@@ -88,9 +71,8 @@ The variables estimated from these signals are:
 - angle(): angle between vectors
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+- gravityMean
+- tBodyAccMean
+- tBodyAccJerkMean
+- tBodyGyroMean
+- tBodyGyroJerkMean
