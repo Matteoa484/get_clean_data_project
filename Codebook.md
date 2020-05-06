@@ -45,3 +45,6 @@ Notes:
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
 
+## Features dataset
+
+The base raw data is the 3-axial (*XYZ*) raw time signals ("t" prefix) from the accelerometer (*Acc*) and gyroscope (*Gyro*), resulting in the raw signals *tAcc-XYZ* and *tGyro-XYZ*. The acceleration signal was then separated into body (*tBodyAcc-XYZ*) and gravity (*tGravityAcc-XYZ*) acceleration signals. Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (*tBodyAccJerk-XYZ* and *tBodyGyroJerk-XYZ*). The magnitude of these signals were calculated using the Euclidean norm (*tBodyAccMag*, *tGravityAccMag*, *tBodyAccJerkMag*, *tBodyGyroMag*, *tBodyGyroJerkMag*). Finally a Fast Fourier Transform was applied to some of these signals ("f" prefix) producing *fBodyAcc-XYZ*, *fBodyAccJerk-XYZ*, *fBodyGyro-XYZ*, *fBodyAccJerkMag*, *fBodyGyroMag*, *fBodyGyroJerkMag*. 
