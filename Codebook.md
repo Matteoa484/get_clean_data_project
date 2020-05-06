@@ -47,7 +47,7 @@ Notes:
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
 
-## Features dataset
+## Features
 
 The base raw data is the 3-axial (*XYZ*) raw time signals ("t" prefix) from the accelerometer (*Acc*) and gyroscope (*Gyro*), resulting in the raw signals *tAcc-XYZ* and *tGyro-XYZ*. The acceleration signal was then separated into body (*tBodyAcc-XYZ*) and gravity (*tGravityAcc-XYZ*) acceleration signals. Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (*tBodyAccJerk-XYZ* and *tBodyGyroJerk-XYZ*). The magnitude of these signals were calculated using the Euclidean norm (*tBodyAccMag*, *tGravityAccMag*, *tBodyAccJerkMag*, *tBodyGyroMag*, *tBodyGyroJerkMag*). Finally a Fast Fourier Transform was applied to some of these signals ("f" prefix) producing *fBodyAcc-XYZ*, *fBodyAccJerk-XYZ*, *fBodyGyro-XYZ*, *fBodyAccJerkMag*, *fBodyGyroMag*, *fBodyGyroJerkMag*. 
 
@@ -77,6 +77,8 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 The complete features list is saved in the *featutes.txt* file, uploaded in R as a character vector of **length 561**.
 The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total). The train dataset is a **data frame of 561 columns and 7352 rows**. The test dataset is a **data frame of 561 columns and 2947 rows**.
 
-## Subjects dataset
+## Subjects
 
-List of subjects for each
+List of subjects for each observation, data range from subject 1 to subject 30. The list is saved in the *subject_train.txt* file, a vector of **length 7325**, and the *subject_test.txt* file, a vector of **length 2947**.
+
+## Activities
