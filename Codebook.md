@@ -38,8 +38,10 @@ The files included in the dataset folder and **used for the Coursera project are
 4. *activity_labels.txt*: Links the class labels with their activity name.
 5. *train/X_train.txt*: Training set.
 6. *train/y_train.txt*: Training labels.
-7. *test/X_test.txt*: Test set.
-8. *test/y_test.txt*: Test labels.
+7. *train/subject_train.txt*: Training subjects.
+8. *test/X_test.txt*: Test set.
+9. *test/y_test.txt*: Test labels.
+10. *test/subject_test.txt*: Test subjects.
 
 Notes: 
 - Features are normalized and bounded within [-1,1].
@@ -70,12 +72,11 @@ The variables estimated from these signals are:
 - bandsEnergy(): energy of a frequency interval within the 64 bins of the FFT of each window.
 - angle(): angle between vectors
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-- gravityMean
-- tBodyAccMean
-- tBodyAccJerkMean
-- tBodyGyroMean
-- tBodyGyroJerkMean
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable: gravityMean,  tBodyAccMean, tBodyAccJerkMean, tBodyGyroMean, tBodyGyroJerkMean.
 
 The complete features list is saved in the *featutes.txt* file, uploaded in R as a character vector of **length 561**.
 The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total). The train dataset is a **data frame of 561 columns and 7352 rows**. The test dataset is a **data frame of 561 columns and 2947 rows**.
+
+## Subjects dataset
+
+List of subjects for each
