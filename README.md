@@ -12,7 +12,7 @@ The Github repo contains:
 Most of the work in the script is done with packages from the core *"tidyverse"*, in particular:
 - **Readr**: faster than base R read.table, doesn't need the `StringsAsFactors = FALSE` and easier for col names (`col_names`) and col parse (`col_type`).
 - **Dplyr**: it's a grammar of data manipulation, which through specific verbs performs all the main data manipulations with an easy-to-read code.
-- **Stringr**:
+- **Stringr**: it provides a cohesive and easy set of functions to work with strings.
 - **Tibble**: a data.frame which prints better on the console.
 - **Magrittr**: pipe (`%>%`) operator.
 
