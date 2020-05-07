@@ -80,3 +80,5 @@ The features data are saved in the *X_train.txt* file (~70% of total) and the *X
 List of subjects for each observation, data range from subject 1 to subject 30. The list is saved in the *subject_train.txt* file, a vector of **length 7325**, and the *subject_test.txt* file, a vector of **length 2947**.
 
 ## Activities
+
+The list of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) are saved in the *activity_labels.txt* file, which is a data frame of 2 columns (activity id and activity label) and 6 rows (the 6 activites)
