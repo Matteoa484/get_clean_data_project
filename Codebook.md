@@ -82,3 +82,15 @@ List of subjects for each observation, data range from subject 1 to subject 30. 
 ## Activities
 
 The list of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) are saved in the *activity_labels.txt* file, which is a data frame of 2 columns (activity id and activity label) and 6 rows (the 6 activites). The single observation's activity is saved in the *y_train.txt* for the train dataset (**length 7352**) and in the *y_test.txt* for the test dataset (**length 2947**).
+
+## Transformation full datasets
+
+# Merge raw data
+
+The different files have been merged together. First the full dataset of observations (**561 columns and 10299 rows**), then the lables (**10299 rows**) then the subjects (**10299 rows**). Raw full set is **564 columns** and **10299 rows**.
+
+# Select mean / std varibales
+
+Only variables based on mean or std have been selected. the resulting data frame is **88 columns and 10299 rows**.
+
+New set is **88 columns and 180 rows**
