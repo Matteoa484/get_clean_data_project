@@ -72,10 +72,10 @@ The variables estimated from these signals are:
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable: gravityMean,  tBodyAccMean, tBodyAccJerkMean, tBodyGyroMean, tBodyGyroJerkMean.
 
-The complete features list is saved in the *features.txt* file, uploaded in R as a character vector of **length 561**.
-The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total). The train dataset is a **data frame of 561 columns and 7352 rows**. The test dataset is a **data frame of 561 columns and 2947 rows**.
+The complete features list is saved in the *features.txt* file. The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total).
 
-dataset | txt file | cols num | rows num
+
+dataset | txt file | cols | rows
 --------|----------|----------|---------
 features list|features.txt|1|561
 features obs. train|X_train.txt|561|7352
@@ -86,6 +86,12 @@ features obs. total| - |561|10299
 #### Subjects
 
 List of subjects for each observation, data range from subject 1 to subject 30. The list is saved in the *subject_train.txt* file, a vector of **length 7352**, and the *subject_test.txt* file, a vector of **length 2947**.
+
+dataset | txt file | cols | rows 
+--------|----------|------|-------
+subjects list train|subject_train.txt|1|7352
+subjects list test|subject_test.txt|1|2947
+subjects list total| - |1|10299
 
 #### Activities
 
