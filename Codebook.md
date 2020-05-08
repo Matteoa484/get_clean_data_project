@@ -128,7 +128,7 @@ filtered dataset|88|10299
 
 #### Clean variables' name
 
-The features list (cols name) is cleaned through 'stringr::str_replace_all' and some RegEx, in order to make them easier to read. The words have been lowercased, separated by a "\_" and all the punctuation removed / replaced with "\_".
+The features list (cols name) is cleaned through `stringr::str_replace_all` and some RegEx, in order to make them easier to read. The words have been lowercased, separated by a "\_" and all the punctuation removed / replaced with "\_".
 
 raw string | replaced string 
 -----------|-----------------
@@ -151,4 +151,6 @@ jerk (?=[a-z]) | jerk_
 
 # New tidy dataset
 
-New set is **88 columns and 180 rows**
+In the final step, the `run_analysis.R` script group the data by *subject* and *activity* with `dplyr::group_by` and then with `dplyr::summarise_all` computes the variables mean for each sub-group (i.e. subject-1 walking or subject-2 standing, etc).
+
+The outcome is a new tidy dataset, saved as a txt file with the name *tidy_data_set.txt* composed of **88 columns** and **180 rows**
