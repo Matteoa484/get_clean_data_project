@@ -128,7 +128,27 @@ filtered dataset|88|10299
 
 #### Clean variables' name
 
-The features list (cols name) is cleaned through 'stringr::str_replace_all' and some RegEx, in order to make them easier to read. The words have been lowercased, separated by a "\\_" and all the punc
+The features list (cols name) is cleaned through 'stringr::str_replace_all' and some RegEx, in order to make them easier to read. The words have been lowercased, separated by a "\_" and all the punctuation removed / replaced with "\_".
+
+raw string | replaced string
+-----------|-----------------
+\-| \_
+\(\) | 
+
+"(?<=[a-zA-Z])\\(" = "_",
+      "\\," = "\\_",
+      "\\)$" = "",
+      "\\)(?=[:punct:])" = "",
+      "[0-9]{1,3} " = "",
+      "(?<=body)body" = "",
+      "acc(?=[a-z])" = "acc_",
+      "gyro(?=[a-z])" = "gyro_",
+      "^t" = "time_",
+      "^f" = "fourier_",
+      "body(?=[a-z])" = "body_",
+      "gravity(?=[a-z])" = "gravity_",
+      "mean(?=[a-z])" = "mean_",
+      "jerk(?=[a-z])" = "jerk_"
 
 # New tidy dataset
 
