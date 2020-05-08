@@ -110,9 +110,21 @@ activity obs. total|-|1|10299
 
 After uploading all the raw files, the R script starts by merging the *train* and *test* data for each group (observations, labels and subjects) and then binding all together in a "full raw dataset" of **564 columns** and **10299 rows**.
 
+dataset | cols | rows
+--------|------|-------
+features obs. total|561|10299
+subjects obs. total|1|10299
+activity obs. total|1|10299
+full dataset|564|10299
+
 #### Select mean / std varibales
 
 The script proceeds to select only the variables based on mean or std, reducing the full dataset to **88 columns and 10299 rows**.
+
+dataset | cols | rows 
+--------|------|------
+raw dataset|564|10299
+filtered dataset|88|10299
 
 #### Clean variables' name
 
