@@ -12,7 +12,7 @@ Via Opera Pia 11A, I-16145, Genoa, Italy.
 
 www.smartlab.ws
 
-## Raw dataset information
+### Raw dataset information
 
 The experiments have been carried out with a group of 30 volunteers. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone on the waist. Using its embedded accelerometer and gyroscope, the data captured 3-axial linear acceleration and 3-axial angular velocity.
 
@@ -27,7 +27,7 @@ For each record it is provided:
 
 For further details about this dataset check the README.txt ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)).
 
-## Dataset files
+### Dataset files
 
 The files included in the dataset folder and **used for the Coursera project are**:
 1. *README.txt*
@@ -45,7 +45,7 @@ Notes:
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
 
-## Features
+#### Features
 
 The base raw data is the 3-axial (*XYZ*) raw time signals ("t" prefix) from the accelerometer (*tAcc-XYZ*) and gyroscope (*tGyro-XYZ*). *tAcc-XYZ* was then separated into body (*tBodyAcc-XYZ*) and gravity (*tGravityAcc-XYZ*) signals. Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (*tBodyAccJerk-XYZ* and *tBodyGyroJerk-XYZ*). The magnitude of these signals were calculated using the Euclidean norm (*tBodyAccMag*, *tGravityAccMag*, *tBodyAccJerkMag*, *tBodyGyroMag*, *tBodyGyroJerkMag*). Finally a Fast Fourier Transform was applied to some of these signals ("f" prefix) producing *fBodyAcc-XYZ*, *fBodyAccJerk-XYZ*, *fBodyGyro-XYZ*, *fBodyAccJerkMag*, *fBodyGyroMag*, *fBodyGyroJerkMag*. 
 
@@ -75,21 +75,25 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 The complete features list is saved in the *featutes.txt* file, uploaded in R as a character vector of **length 561**.
 The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total). The train dataset is a **data frame of 561 columns and 7352 rows**. The test dataset is a **data frame of 561 columns and 2947 rows**.
 
-## Subjects
+#### Subjects
 
 List of subjects for each observation, data range from subject 1 to subject 30. The list is saved in the *subject_train.txt* file, a vector of **length 7352**, and the *subject_test.txt* file, a vector of **length 2947**.
 
-## Activities
+#### Activities
 
 The list of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) are saved in the *activity_labels.txt* file, which is a data frame of 2 columns (activity id and activity label) and 6 rows (the 6 activites). The single observation's activity is saved in the *y_train.txt* for the train dataset (**length 7352**) and in the *y_test.txt* for the test dataset (**length 2947**).
 
-# Merge raw data
+# Transformations
+
+#### Merge raw data
 
 After uploading all the raw files, the R script starts by merging the *train* and *test* data for each group (observations, labels and subjects) and then binding all together in a "full raw dataset" of **564 columns** and **10299 rows**.
 
-# Select mean / std varibales
+#### Select mean / std varibales
 
 The script proceeds to select only the variables based on mean or std, reducing the full dataset to **88 columns and 10299 rows**.
+
+#### Clean variables' name
 
 It also proceeds to clean the variable names in order to make them more readable 
 
