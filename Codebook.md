@@ -117,7 +117,7 @@ subjects obs. total|1|10299
 activity obs. total|1|10299
 full dataset|564|10299
 
-#### Select mean / std varibales
+#### Select mean / std variables
 
 The script proceeds to select only the variables based on mean or std, reducing the full dataset to **88 columns and 10299 rows**.
 
@@ -129,5 +129,7 @@ filtered dataset|88|10299
 #### Clean variables' name
 
 It also proceeds to clean the variable names in order to make them more readable 
+
+# New tidy dataset
 
 New set is **88 columns and 180 rows**
