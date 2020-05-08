@@ -52,19 +52,6 @@ The base raw data is the 3-axial (*XYZ*) raw time signals ("t" prefix) from the 
 Those signals were used to estimate the following features for each pattern: tBodyAcc-XYZ, tGravityAcc-XYZ, tBodyAccJerk-XYZ, tBodyGyro-XYZ, tBodyGyroJerk-XYZ, tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag, fBodyAcc-XYZ, fBodyAccJerk-XYZ,  fBodyGyro-XYZ, fBodyAccMag, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
 
 The variables estimated from these signals are:
-
-variable | description |   | variable | description
----------|-------------|---|----------|-------------
-mean()|mean value| |entropy()|signal entropy
-std()|standard deviation| |arCoeff()|autorregresion coefficients
-mad()|median abs. deviation| |correlation()|correlation coefficient
-max()|largest value| |maxInds()|index of the frequency component with max magnitude
-min()|smallest value| |meanFreq()|weighted avg of the freq. components to obtain a mean freq.
-sma()|signal magnitude area| |skewness()|skewness of the freq.y domain signal
-energy()|energy measure| |kurtosis()|kurtosis of the freq. domain signal
-iqr()|interquartile range| |bandsEnergy()|energy of a freq. interval
- | | |angle()|angle between vectors
-
 - mean(): mean value
 - std(): standard deviation
 - mad(): median absolute deviation 
@@ -87,14 +74,12 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 The complete features list is saved in the *features.txt* file. The features data are saved in the *X_train.txt* file (~70% of total) and the *X_test.txt* file (~30% of total).
 
-
 dataset | txt file | cols | rows
 --------|----------|----------|---------
 features list|features.txt|1|561
 features obs. train|X_train.txt|561|7352
 features obs. test|X_test.txt|561|2947
 features obs. total| - |561|10299
-
 
 #### Subjects
 
@@ -166,4 +151,4 @@ jerk (?=[a-z]) | jerk_
 
 In the final step, the `run_analysis.R` script group the data by *subject* and *activity* with `dplyr::group_by` and then with `dplyr::summarise_all` computes the variables mean for each sub-group (i.e. subject-1 walking or subject-2 standing, etc).
 
-The outcome is a new tidy dataset, saved as a txt file with the name *tidy_data_set.txt* composed of **88 columns** and **180 rows**
+The outcome is a new tidy dataset, saved as a txt file with the name *tidy_data_set.txt*, composed of **88 columns** and **180 rows**
