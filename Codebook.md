@@ -18,13 +18,6 @@ The experiments have been carried out with a group of 30 volunteers. Each person
 
 The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
-For each record it is provided:
-- Triaxial acceleration from the accelerometer and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
-
 For further details about this dataset check the README.txt ([link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)).
 
 ### Dataset files
@@ -126,7 +119,7 @@ filtered dataset|88|10299
 
 #### Clean variables' name
 
-The features list (cols name) is cleaned through `stringr::str_replace_all` and some RegEx, in order to make them easier to read. The words have been lowercased, separated by a "\_" and all the punctuation removed / replaced with "\_".
+The features list (cols name) is cleaned through `stringr::str_replace_all` and some RegEx, changing all variable names in snake_case. The words have been lowercased, separated by a "\_" and all the punctuation removed / replaced with "\_".
 
 raw string | replaced string 
 -----------|-----------------
