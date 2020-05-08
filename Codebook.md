@@ -51,7 +51,20 @@ The base raw data is the 3-axial (*XYZ*) raw time signals ("t" prefix) from the 
 
 Those signals were used to estimate the following features for each pattern: tBodyAcc-XYZ, tGravityAcc-XYZ, tBodyAccJerk-XYZ, tBodyGyro-XYZ, tBodyGyroJerk-XYZ, tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag, fBodyAcc-XYZ, fBodyAccJerk-XYZ,  fBodyGyro-XYZ, fBodyAccMag, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
 
-The variables estimated from these signals are: 
+The variables estimated from these signals are:
+
+variable | description |   | variable | description
+---------|-------------|---|----------|-------------
+mean()|mean value| |entropy()|signal entropy
+std()|standard deviation| |arCoeff()|autorregresion coefficients
+mad()|median abs. deviation| |correlation()|correlation coefficient
+max()|largest value| |maxInds()|index of the frequency component with max magnitude
+min()|smallest value| |meanFreq()|weighted avg of the freq. components to obtain a mean freq.
+sma()|signal magnitude area| |skewness()|skewness of the freq.y domain signal
+energy()|energy measure| |kurtosis()|kurtosis of the freq. domain signal
+iqr()|interquartile range| |bandsEnergy()|energy of a freq. interval
+ | | |angle()|angle between vectors
+
 - mean(): mean value
 - std(): standard deviation
 - mad(): median absolute deviation 
