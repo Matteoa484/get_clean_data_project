@@ -130,9 +130,9 @@ filtered dataset|88|10299
 
 The features list (cols name) is cleaned through 'stringr::str_replace_all' and some RegEx, in order to make them easier to read. The words have been lowercased, separated by a "\_" and all the punctuation removed / replaced with "\_".
 
-raw string | replaced string
------------|-----------------
-\-| \_
+raw string | replaced string      test1 | test 2
+-----------|-----------------     ------|---------
+\-| \_                            t1 | t2
 \( \) | 
 (?<=[a-zA-Z]) \( | \_
 \, | \_
