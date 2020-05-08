@@ -133,21 +133,21 @@ The features list (cols name) is cleaned through 'stringr::str_replace_all' and 
 raw string | replaced string
 -----------|-----------------
 \-| \_
-\(\) | 
-(?<=[a-zA-Z])\( | \_
+\( \) | 
+(?<=[a-zA-Z]) \( | \_
 \, | \_
-\)$ | 
-\)(?=[:punct:]) | 
-[0-9]{1,3} | 
-      "(?<=body)body" = "",
-      "acc(?=[a-z])" = "acc_",
-      "gyro(?=[a-z])" = "gyro_",
-      "^t" = "time_",
-      "^f" = "fourier_",
-      "body(?=[a-z])" = "body_",
-      "gravity(?=[a-z])" = "gravity_",
-      "mean(?=[a-z])" = "mean_",
-      "jerk(?=[a-z])" = "jerk_"
+\) $ | 
+\) (?=[:punct:]) | 
+[0-9] {1,3} | 
+(?<=body) body | 
+acc (?=[a-z]) | acc_
+gyro (?=[a-z]) | gyro_
+^t | time_
+^f | fourier_
+body (?=[a-z]) | body_
+gravity (?=[a-z]) | gravity_
+mean (?=[a-z]) | mean_
+jerk (?=[a-z]) | jerk_
 
 # New tidy dataset
 
