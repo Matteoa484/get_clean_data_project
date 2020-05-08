@@ -85,13 +85,13 @@ features obs. total| - |561|10299
 
 #### Subjects
 
-List of subjects for each observation, data range from subject 1 to subject 30. The list is saved in the *subject_train.txt* file, a vector of **length 7352**, and the *subject_test.txt* file, a vector of **length 2947**.
+List of subjects for each observation, data range from subject 1 to subject 30. The list is saved in the *subject_train.txt* file and the *subject_test.txt* file.
 
 dataset | txt file | cols | rows 
 --------|----------|------|-------
-subjects list train|subject_train.txt|1|7352
-subjects list test|subject_test.txt|1|2947
-subjects list total| - |1|10299
+subjects obs. train|subject_train.txt|1|7352
+subjects obs. test|subject_test.txt|1|2947
+subjects obs. total| - |1|10299
 
 #### Activities
 
