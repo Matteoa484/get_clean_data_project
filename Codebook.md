@@ -78,6 +78,9 @@ The features data are saved in the *X_train.txt* file (~70% of total) and the *X
 dataset | txt file | cols num | rows num
 --------|----------|----------|---------
 features list|features.txt|1|561
+features obs. train|X_train.txt|561|7352
+features obs. test|X_test.txt|561|2947
+tot. features ibs.|---|561|10299
 
 
 #### Subjects
