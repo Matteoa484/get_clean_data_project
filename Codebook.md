@@ -95,7 +95,14 @@ subjects obs. total| - |1|10299
 
 #### Activities
 
-The list of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) are saved in the *activity_labels.txt* file, which is a data frame of 2 columns (activity id and activity label) and 6 rows (the 6 activites). The single observation's activity is saved in the *y_train.txt* for the train dataset (**length 7352**) and in the *y_test.txt* for the test dataset (**length 2947**).
+The list of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) are saved in the *activity_labels.txt* file, which is a data frame of 2 columns (activity id and activity label) and 6 rows (the 6 activites). The single observation's activity is saved in the *y_train.txt* for the train dataset and in the *y_test.txt* for the test dataset.
+
+dataset | txt file | cols | rows 
+--------|----------|------|-------
+6 activities|activity_labels.txt|2|6
+activitz obs. train|y_train.txt|1|7352
+activity obs. test|y_test.txt|1|2947
+activity obs. total|-|1|10299
 
 # Transformations
 
