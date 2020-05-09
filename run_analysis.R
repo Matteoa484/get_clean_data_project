@@ -102,7 +102,7 @@ col_name <-
 
 # create a new tidy data set ----------------------------------------------
 
-# the txt file can be read with base R read.table
+# the txt file can be read with base R read.table(header = TRUE)
 
 
 new_set <-
