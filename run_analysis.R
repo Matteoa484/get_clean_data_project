@@ -108,6 +108,7 @@ col_name <-
 new_set <-
    full_set %>% 
    group_by(subject, activity) %>% 
-   summarise_all(mean, na.rm = TRUE) %>%
-   as.data.frame(new_set) %>%
+   summarise_all(mean, na.rm = TRUE) 
+ 
+ as.data.frame(new_set) %>%
    write.table("tidy_data_set.txt")
